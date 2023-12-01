@@ -4949,7 +4949,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 431.5001}
+  m_AnchoredPosition: {x: -215.5, y: 431.49997}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &757821547
@@ -7650,6 +7650,22 @@ PrefabInstance:
     - target: {fileID: 7582651722703571451, guid: 46b97725cedb58447ab9182128fb386a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595844438894594658, guid: 46b97725cedb58447ab9182128fb386a, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.07578813
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773326904538956474, guid: 46b97725cedb58447ab9182128fb386a, type: 3}
+      propertyPath: m_LODs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773326904538956474, guid: 46b97725cedb58447ab9182128fb386a, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7773326904538956474, guid: 46b97725cedb58447ab9182128fb386a, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.020366162
       objectReference: {fileID: 0}
     - target: {fileID: 8285884341680327587, guid: 46b97725cedb58447ab9182128fb386a, type: 3}
       propertyPath: m_TagString
@@ -11749,7 +11765,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 863849052}
   m_HandleRect: {fileID: 863849051}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -12193,7 +12209,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1002428758}
   m_HandleRect: {fileID: 1002428757}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
