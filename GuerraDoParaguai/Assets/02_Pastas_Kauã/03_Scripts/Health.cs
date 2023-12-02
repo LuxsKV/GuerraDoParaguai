@@ -17,13 +17,16 @@ public class Health : MonoBehaviour
 
     [Header("UI")]
     public TextMeshProUGUI healthText;
-    public Image panelDamage;
 
+    [Header("Blood screen")]
+    public Image panelDamage;
+    public Image telaPiscante;
+    public float duracaoPiscar = 0.2f;
+    public Color corPiscar = new Color(1f, 0f, 0f, 0.75f);
 
     private void Start()
     {
-        originalHealthBarSize = healthBar.sizeDelta.x;
-        AlterarTransparenciaDoPainel(0.1f);
+        originalHealthBarSize = healthBar.sizeDelta.x; 
     }
     private void Update()
     {
@@ -64,6 +67,7 @@ public class Health : MonoBehaviour
             if (isLocalPlayer)
             {
                 AlterarTransparenciaDoPainel(0.1f);
+                StartCoroutine(PiscarTela());
             }
         }
         if (health == 50)
@@ -71,12 +75,14 @@ public class Health : MonoBehaviour
             if (isLocalPlayer)
             {
                 AlterarTransparenciaDoPainel(0.25f);
+                StartCoroutine(PiscarTela());
             }
         }if (health == 25)
         {
             if (isLocalPlayer)
             {
                 AlterarTransparenciaDoPainel(0.5f);
+                StartCoroutine(PiscarTela());
             }
         }
     }
@@ -94,5 +100,18 @@ public class Health : MonoBehaviour
             Debug.LogError("O objeto Image não foi atribuído ao script!");
         }
     }
-    
+    IEnumerator PiscarTela()
+    {
+        // Torna o painel visível e define a cor de piscar
+        telaPiscante.color = corPiscar;
+        telaPiscante.gameObject.SetActive(true);
+
+        // Piscar a tela
+        yield return new WaitForSeconds(duracaoPiscar);
+
+        // Torna o painel invisível
+        telaPiscante.gameObject.SetActive(false);
+        
+    }
+
 }

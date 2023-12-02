@@ -20,7 +20,6 @@ public class RoomList : MonoBehaviourPunCallbacks
 
     private List<RoomInfo> cachedRoomList = new List<RoomInfo>();
 
-
     public void ChangeRoomToCreateName(string _roomName)
     {
         roomMananger.roomNameToJoin = _roomName;
@@ -48,6 +47,7 @@ public class RoomList : MonoBehaviourPunCallbacks
     {
         base.OnConnectedToMaster();
         PhotonNetwork.JoinLobby();
+        
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)

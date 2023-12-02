@@ -92,15 +92,6 @@ public class WeaponSwitcher : MonoBehaviour
             }
 
         }
-        if(Input.GetButton("Cancel"))
-        {
-            Application.Quit();
-            Debug.Log("QUIT");
-        }
-       
-        
-        
-
         if(previousSeletedWeapon != selectedWeapon)
         {
             SelectedWeapon();

@@ -45,6 +45,9 @@ MonoBehaviour:
   - SelectedWeapon
   - SetTPWeapon
   - TakeDamage
+  - CloseServerAndLoadMenu
+  - InitializeTimer
+  - UpdateTimer
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

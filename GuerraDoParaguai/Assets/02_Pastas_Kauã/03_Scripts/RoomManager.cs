@@ -29,6 +29,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
     [HideInInspector]
     public int deaths = 0;
 
+    [Header("Timer")]
+    public GameObject timer;
+
+
     void Awake()
     {
         instance = this;
@@ -83,6 +87,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public void SpawnPlayer()
     {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            timer.SetActive(true);
+        }
         Transform spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
 
         GameObject _player = PhotonNetwork.Instantiate(player.name, spawnPoint.position, Quaternion.identity);

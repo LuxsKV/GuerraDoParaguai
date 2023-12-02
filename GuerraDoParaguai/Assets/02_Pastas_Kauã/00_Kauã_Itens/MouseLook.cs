@@ -40,29 +40,30 @@ public class MouseLook : MonoBehaviour
         if (characterBody)
             targetCharacterDirection = characterBody.transform.localRotation.eulerAngles;
         
-        if (lockCursor)
-            LockCursor();
-
+        LockCursor();
     }
-    
-
     public void LockCursor()
     {
         // make the cursor hidden and locked
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        
-
-        
+        Cursor.visible = false;  
+        lockCursor = true;
     }
-    
-
-    
-    
-
+    public void UnLockCursor()
+    {
+        Cursor.lockState -= CursorLockMode.Locked;
+        Cursor.visible = true;
+        lockCursor = false;
+    }
     void Update()
     {
-        
+        if (lockCursor)
+        {
+            Mouse();
+        }
+    }
+    void Mouse()
+    {
         // Allow the script to clamp based on a desired target value.
         var targetOrientation = Quaternion.Euler(targetDirection);
         var targetCharacterOrientation = Quaternion.Euler(targetCharacterDirection);
