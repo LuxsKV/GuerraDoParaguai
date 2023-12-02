@@ -4704,7 +4704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbabb3041e02a5c41bbf3d7ab51c14c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 900
+  timeRemaining: 901
   timerText: {fileID: 1259954281}
 --- !u!114 &697691644
 MonoBehaviour:
@@ -5099,7 +5099,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -215.50002, y: 431.5001}
+  m_AnchoredPosition: {x: -0.000015258789, y: 431.50006}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &757821547
@@ -12577,7 +12577,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1002428758}
   m_HandleRect: {fileID: 1002428757}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
