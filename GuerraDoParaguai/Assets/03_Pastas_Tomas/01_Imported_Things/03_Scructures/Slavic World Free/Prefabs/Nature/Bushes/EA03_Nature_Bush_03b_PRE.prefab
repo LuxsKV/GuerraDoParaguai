@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7039314615321073791}
   - component: {fileID: 3094287184444320029}
   - component: {fileID: 6757582103455913564}
+  - component: {fileID: 6955254334420502200}
   m_Layer: 0
   m_Name: EA03_Nature_Bush_03b_LOD0
   m_TagString: Untagged
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6955254334420502200
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556316094843868621}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2951668719931975377, guid: b45c6067cba0be64ba98aa6096607aac, type: 3}
 --- !u!1 &957204323108823746
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,8 +142,8 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957204323108823746}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.016330004, y: 0.98751664, z: -0.1020937}
-  m_Size: 6.771224
+  m_LocalReferencePoint: {x: -0.0020038486, y: 0.79357535, z: -0.0008060932}
+  m_Size: 3.4566748
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
@@ -218,7 +233,7 @@ MeshRenderer:
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: 0.5
   m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
@@ -301,7 +316,7 @@ MeshRenderer:
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: 0.5
   m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
@@ -327,7 +342,6 @@ GameObject:
   - component: {fileID: 3213215005432424089}
   - component: {fileID: 1631967870475067403}
   - component: {fileID: 2461604056262586335}
-  - component: {fileID: 1700228790}
   m_Layer: 0
   m_Name: EA03_Nature_Bush_03b_LOD3
   m_TagString: Untagged
@@ -385,7 +399,7 @@ MeshRenderer:
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: 0.5
   m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
@@ -400,17 +414,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1700228790
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7806477977801733012}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8453164982304574756, guid: b45c6067cba0be64ba98aa6096607aac, type: 3}

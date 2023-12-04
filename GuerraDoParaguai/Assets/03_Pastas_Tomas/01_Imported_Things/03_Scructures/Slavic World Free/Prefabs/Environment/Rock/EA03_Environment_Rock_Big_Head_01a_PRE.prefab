@@ -93,7 +93,6 @@ GameObject:
   m_Component:
   - component: {fileID: 175314511579609993}
   - component: {fileID: 46421164521811801}
-  - component: {fileID: 5937375415808613343}
   m_Layer: 0
   m_Name: EA03_Environment_Rock_Big_Head_01a_PRE
   m_TagString: Untagged
@@ -146,19 +145,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 156674190384213181}
   m_Enabled: 1
---- !u!65 &5937375415808613343
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178873758778006785}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &178921953265055235
 GameObject:
   m_ObjectHideFlags: 0
