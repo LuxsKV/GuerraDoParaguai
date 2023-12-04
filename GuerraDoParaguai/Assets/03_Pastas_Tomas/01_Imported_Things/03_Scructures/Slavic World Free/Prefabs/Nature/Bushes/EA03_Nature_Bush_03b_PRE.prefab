@@ -93,7 +93,6 @@ GameObject:
   m_Component:
   - component: {fileID: 433327351656282232}
   - component: {fileID: 4636846449712189193}
-  - component: {fileID: 3698033241291963810}
   m_Layer: 0
   m_Name: EA03_Nature_Bush_03b_PRE
   m_TagString: Untagged
@@ -151,19 +150,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2461604056262586335}
   m_Enabled: 1
---- !u!65 &3698033241291963810
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957204323108823746}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5650241840990047604
 GameObject:
   m_ObjectHideFlags: 0
