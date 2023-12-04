@@ -1,6 +1,5 @@
 using Photon.Pun;
 using Photon.Pun.UtilityScripts;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -158,7 +157,23 @@ public class Weapon : MonoBehaviour
                 boom.TakeDamage(damege);
                 hit.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damege);
             }
-            if (hit.transform.gameObject.GetComponent<Health>())
+            if (hit.transform.gameObject.CompareTag("Head"))
+            {
+                PhotonNetwork.LocalPlayer.AddScore(damege * 4);
+
+                if (damege * 4 < hit.transform.gameObject.GetComponent<Health>().health)
+                {
+
+                    RoomManager.instance.kills++;
+                    RoomManager.instance.SetHashes();
+
+                    PhotonNetwork.LocalPlayer.AddScore(100 * 4);
+
+                }
+
+                hit.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamege", RpcTarget.All, damege * 4);
+            }
+            else if (hit.transform.gameObject.GetComponent<Health>())
             {
                 PhotonNetwork.LocalPlayer.AddScore(damege);
 
@@ -174,10 +189,6 @@ public class Weapon : MonoBehaviour
 
                 hit.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamege", RpcTarget.All, damege);
             }
-
-
-
-
         }
     }
 
