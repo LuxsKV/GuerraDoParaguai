@@ -5,19 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/test/01_menu/Menu.unity
     guid: a098ae9106bc995448a4aba7dfe6a4db
-  - enabled: 1
+  - enabled: 0
     path: Assets/01_Scenes/Game.unity
     guid: 856dff69f07260640ac4f499a0c98e75
-  - enabled: 1
+  - enabled: 0
     path: Assets/test/CutsceneSave/Awake.unity
     guid: bbcc279f23d0d894e91286b1a1833fa2
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/03_Pastas_Tomas/01_Imported_Things/06_Scenes/01_Cutscenes/03_SceneG2.unity
     guid: f9aa24b5e7424f74db8406a96192d76c
   - enabled: 0
