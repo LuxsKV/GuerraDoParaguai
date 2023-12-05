@@ -44,7 +44,7 @@ public class Health : MonoBehaviour
 
         healthText.text = health.ToString();
 
-
+        
         if (health <= 0)
         {
 
@@ -93,23 +93,23 @@ public class Health : MonoBehaviour
             Color corAtual = panelDamage.color;
             corAtual.a = alpha;
             panelDamage.color = corAtual;
-            Debug.Log("Transparência alterada com sucesso!");
+            Debug.Log("Transparï¿½ncia alterada com sucesso!");
         }
         else
         {
-            Debug.LogError("O objeto Image não foi atribuído ao script!");
+            Debug.LogError("O objeto Image nï¿½o foi atribuï¿½do ao script!");
         }
     }
     IEnumerator PiscarTela()
     {
-        // Torna o painel visível e define a cor de piscar
+        // Torna o painel visï¿½vel e define a cor de piscar
         telaPiscante.color = corPiscar;
         telaPiscante.gameObject.SetActive(true);
 
         // Piscar a tela
         yield return new WaitForSeconds(duracaoPiscar);
 
-        // Torna o painel invisível
+        // Torna o painel invisï¿½vel
         telaPiscante.gameObject.SetActive(false);
         
     }

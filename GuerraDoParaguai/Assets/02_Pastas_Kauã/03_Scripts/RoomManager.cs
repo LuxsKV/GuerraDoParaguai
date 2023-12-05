@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
+
 public class RoomManager : MonoBehaviourPunCallbacks
 {
     public static RoomManager instance;
@@ -18,11 +19,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public GameObject nameUI;
     public GameObject connectingUI;
 
-
     private string nickname = "unnamed";
 
     public string roomNameToJoin = "test";
-
 
     [HideInInspector]
     public int kills = 0;
@@ -32,6 +31,14 @@ public class RoomManager : MonoBehaviourPunCallbacks
     [Header("Timer")]
     public GameObject timer;
 
+    public enum Team
+    {
+        None,
+        TeamA,
+        TeamB
+    }
+
+    private Team playerTeam = Team.None;
 
     void Awake()
     {
@@ -53,26 +60,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
         connectingUI.SetActive(true);
     }
 
-
-    // Start is called before the first frame update
-    //void Start()
-    //{
-    //
-    //}
-    //public override void OnConnectedToMaster()
-    //{
-    //    base.OnConnectedToMaster();
-    //    Debug.Log("Connected to Server");
-    //    PhotonNetwork.JoinLobby();
-    //    
-    //    
-    //}
-    //public override void OnJoinedLobby()
-    //{
-    //    base.OnJoinedLobby();
-    //    Debug.Log("We're in the lobby");
-    //    PhotonNetwork.JoinOrCreateRoom(roomNameToJoin, null, null);
-    //}
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
@@ -80,10 +67,15 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         roomCam.SetActive(false);
 
-        SpawnPlayer(); 
-
+        AssignTeam(); // Assign team to the player
+        SpawnPlayer();
     }
 
+    private void AssignTeam()
+    {
+        // Alternar entre os times A e B
+        playerTeam = (Team)(((int)playerTeam + 1) % 2);
+    }
 
     public void SpawnPlayer()
     {
@@ -91,16 +83,27 @@ public class RoomManager : MonoBehaviourPunCallbacks
         {
             timer.SetActive(true);
         }
-        Transform spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
+
+        // Selecionar o ponto de spawn com base no time
+        Transform spawnPoint = GetSpawnPointForTeam(playerTeam);
 
         GameObject _player = PhotonNetwork.Instantiate(player.name, spawnPoint.position, Quaternion.identity);
-        
+
         _player.GetComponent<PlayerSetup>().IsLocalPlayer();
         _player.GetComponent<Health>().isLocalPlayer = true;
 
         _player.GetComponent<PhotonView>().RPC("SetNickname", RpcTarget.AllBuffered, nickname);
         PhotonNetwork.LocalPlayer.NickName = nickname;
 
+        SetHashes();
+    }
+
+    private Transform GetSpawnPointForTeam(Team team)
+    {
+        // Implemente lógica para selecionar pontos de spawn com base no time
+        // Pode ser aleatório ou seguir um padrão predefinido
+        // Exemplo: return spawnPoints[(int)team];
+        return spawnPoints[Random.Range(0, spawnPoints.Length)];
     }
 
     public void SetHashes()
@@ -110,15 +113,13 @@ public class RoomManager : MonoBehaviourPunCallbacks
             Hashtable hash = PhotonNetwork.LocalPlayer.CustomProperties;
             hash["kills"] = kills;
             hash["deaths"] = deaths;
+            hash["team"] = (int)playerTeam;
 
             PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
         }
         catch
         {
-
+            // Tratar exceções, se necessário
         }
     }
-
-
-
 }
