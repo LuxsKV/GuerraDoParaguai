@@ -157,7 +157,7 @@ public class Weapon : MonoBehaviour
                 boom.TakeDamage(damege);
                 hit.transform.gameObject.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damege);
             }
-            if (hit.transform.gameObject.CompareTag("Head"))
+            if (hit.transform.gameObject.transform.Find("Head"))
             {
                 PhotonNetwork.LocalPlayer.AddScore(damege * 4);
 

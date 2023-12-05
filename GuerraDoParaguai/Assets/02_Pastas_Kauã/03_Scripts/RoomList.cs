@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 
 
 public class RoomList : MonoBehaviourPunCallbacks
@@ -47,26 +47,26 @@ public class RoomList : MonoBehaviourPunCallbacks
     {
         base.OnConnectedToMaster();
         PhotonNetwork.JoinLobby();
-        
+
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
-        if(cachedRoomList.Count <= 0)
+        if (cachedRoomList.Count <= 0)
         {
             cachedRoomList = roomList;
         }
         else
         {
-            foreach(var room in roomList)
+            foreach (var room in roomList)
             {
                 for (int i = 0; i < cachedRoomList.Count; i++)
                 {
-                    if(cachedRoomList[i].Name == room.Name)
+                    if (cachedRoomList[i].Name == room.Name)
                     {
                         List<RoomInfo> newList = cachedRoomList;
 
-                        if(room.RemovedFromList)
+                        if (room.RemovedFromList)
                         {
                             newList.Remove(newList[i]);
 
@@ -84,7 +84,7 @@ public class RoomList : MonoBehaviourPunCallbacks
 
             }
 
-            
+
 
         }
         UpdateUI();
@@ -103,12 +103,12 @@ public class RoomList : MonoBehaviourPunCallbacks
             roomItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = room.Name;
             roomItem.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = room.PlayerCount + "/16";
 
-           
+
             roomItem.GetComponent<RoomItemButton>().RoomName = room.Name;
-            
+
         }
-        
-        
+
+
     }
 
 
