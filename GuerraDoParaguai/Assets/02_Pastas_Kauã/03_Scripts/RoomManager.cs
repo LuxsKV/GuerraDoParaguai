@@ -98,12 +98,16 @@ public class RoomManager : MonoBehaviourPunCallbacks
         SetHashes();
     }
 
+    public Transform[] spawnPointsTeamA;
+    public Transform[] spawnPointsTeamB;
     private Transform GetSpawnPointForTeam(Team team)
     {
-        // Implemente lógica para selecionar pontos de spawn com base no time
-        // Pode ser aleatório ou seguir um padrão predefinido
-        // Exemplo: return spawnPoints[(int)team];
-        return spawnPoints[Random.Range(0, spawnPoints.Length)];
+        if (team == Team.TeamA)
+            return spawnPointsTeamA[Random.Range(0, spawnPointsTeamA.Length)];
+        else if (team == Team.TeamB)
+            return spawnPointsTeamB[Random.Range(0, spawnPointsTeamB.Length)];
+        else
+            return spawnPoints[Random.Range(0, spawnPoints.Length)];
     }
 
     public void SetHashes()
