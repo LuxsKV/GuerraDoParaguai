@@ -103,19 +103,12 @@ public class RoomManager : MonoBehaviourPunCallbacks
     
     private Transform GetSpawnPointForTeam(Team team)
     {
-        if (team == Team.TeamA && spawnPointsTeamA.Length > 0)
+        if (team == Team.TeamA)
             return spawnPointsTeamA[Random.Range(0, spawnPointsTeamA.Length)];
-        else if (team == Team.TeamB && spawnPointsTeamB.Length > 0)
+        else if (team == Team.TeamB)
             return spawnPointsTeamB[Random.Range(0, spawnPointsTeamB.Length)];
-        else if (spawnPoints.Length > 0)
-            return spawnPoints[Random.Range(0, spawnPoints.Length)];
         else
-        {
-            Debug.LogError("No spawn points available for the specified team.");
-            return null;
-        }
-
-    
+            return spawnPoints[Random.Range(0, spawnPoints.Length)];
     }
 
     public void SetHashes()
