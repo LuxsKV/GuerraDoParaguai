@@ -11,6 +11,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public GameObject player;
     [Space]
     public Transform[] spawnPoints;
+    public Transform[] spawnPointsTeamA;
+    public Transform[] spawnPointsTeamB;
 
     [Space]
     public GameObject roomCam;
@@ -98,8 +100,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         SetHashes();
     }
 
-    public Transform[] spawnPointsTeamA;
-    public Transform[] spawnPointsTeamB;
+    
     private Transform GetSpawnPointForTeam(Team team)
     {
         if (team == Team.TeamA)
